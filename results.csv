@@ -1,0 +1,6 @@
+filename,predicted_class
+sample1.JPG,Pepper_bell__Bacterial_spot
+sample2.JPG,Pepper_bell__Bacterial_spot
+sample3.JPG,Pepper_bell__Bacterial_spot
+sample4.JPG,Some_other_class
+sample5.JPG,Pepper_bell__Bacterial_spot
