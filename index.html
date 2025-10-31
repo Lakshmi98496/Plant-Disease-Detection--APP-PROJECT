@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Plant Disease Detection Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header-sticky">
+            <h1>AI Plant Disease Detection Dashboard 🌱</h1>
+            <p class="subhead">Upload a plant image for instant AI diagnosis and recommended treatment.</p>
+        </div>
+        
+        <div class="dashboard-grid">
+            
+            <div class="left-panel">
+                <h2>Image Upload</h2>
+                <div class="upload-area">
+                    <input type="file" id="imageInput" accept="image/*">
+                    <label for="imageInput" class="custom-file-upload">Choose Image</label>
+                    <button id="predictButton" class="predict-button" disabled>Analyze Image</button>
+                </div>
+                
+                <div id="imagePreviewContainer" class="image-preview-container">
+                    <h3>Preview</h3>
+                    <img id="imagePreview" src="#" alt="Image Preview" class="image-preview">
+                </div>
+                <p id="loadingMessage" class="loading-message">Analyzing...</p>
+            </div>
+            
+            <div class="right-panel">
+                <h2>Prediction Results</h2>
+
+                <div id="resultCard" class="result-card">
+                    <h3>
+                        Prediction: <span id="predictedClassPlaceholder">Awaiting image...</span>
+                        <span id="confidencePlaceholder" class="confidence-badge"></span>
+                    </h3>
+                    <p>Filename: <span id="resultFilename"></span></p>
+
+                    <div class="info-item severity-box">
+                        <h4>Severity:</h4>
+                        <p id="severityPlaceholder" class="severity-label">---</p>
+                    </div>
+                    </div>
+
+                <div id="diagnosisBlock" class="diagnosis-block">
+                    <h3>Detailed Diagnosis 🔬</h3>
+                    <div class="info-item">
+                        <h4>Description:</h4>
+                        <p id="diagnosisDescription">Upload an image to get a full diagnosis here.</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Recommended Treatment:</h4>
+                        <p id="treatmentRecommendation">The best treatment options will appear here.</p>
+                    </div>
+                </div>
+
+                <h2>Analysis History</h2>
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Filename</th>
+                            <th>Predicted Class</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
